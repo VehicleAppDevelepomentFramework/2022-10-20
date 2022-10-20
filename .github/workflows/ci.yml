@@ -145,20 +145,20 @@ jobs:
       platform: amd64
       deployment-matrix-str: ${{ needs.initialize-matrix.outputs.deployment-matrix }}
 
-  build-image-aarch64:
-    uses: ./.github/workflows/build-docker-image.yml
-    needs: [initialize-matrix]
-    with:
-      platform: aarch64
-      deployment-matrix-str: ${{ needs.initialize-matrix.outputs.deployment-matrix }}
+  #build-image-aarch64:
+    #uses: ./.github/workflows/build-docker-image.yml
+    #needs: [initialize-matrix]
+    #with:
+      #platform: aarch64
+      #deployment-matrix-str: ${{ needs.initialize-matrix.outputs.deployment-matrix }}
 
-  build-image-multiarch:
-    uses: ./.github/workflows/build-docker-image.yml
-    needs: [initialize-matrix]
-    with:
-      platform: multiarch
-      multiarch: true
-      deployment-matrix-str: ${{ needs.initialize-matrix.outputs.deployment-matrix }}
+  #build-image-multiarch:
+    #uses: ./.github/workflows/build-docker-image.yml
+    #needs: [initialize-matrix]
+    #with:
+      #platform: multiarch
+      #multiarch: true
+      #deployment-matrix-str: ${{ needs.initialize-matrix.outputs.deployment-matrix }}
 
   run-integration-tests:
     name: Run Integration Tests
