@@ -222,7 +222,7 @@ jobs:
           mkdir -p themes/hugo-geekdoc/
           curl -L https://github.com/thegeeklab/hugo-geekdoc/releases/download/v${GEEKDOC_THEME_VERSION}/hugo-geekdoc.tar.gz | tar -xz -C themes/hugo-geekdoc/ --strip-components=1
           echo "Build release documentation for GitHub Pages"
-          hugo -d ./public --environment=pages --baseURL /2022-10-20
+          hugo --baseURL /2022-10-20
       - name: Publish to GH Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
